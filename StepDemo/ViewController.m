@@ -19,10 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-      [[StepManager sharedManager] startWithStep];
-      lable =[[ UILabel alloc]initWithFrame:CGRectMake(100, 300, 300, 40)];
+    [[StepManager sharedManager] startWithStep];
+    lable =[[ UILabel alloc]initWithFrame:CGRectMake(100, 300, 300, 40)];
+    lable.backgroundColor =[UIColor redColor];
     
-  
     [self.view addSubview:lable];
     _timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(getStepNumber) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
@@ -31,7 +31,7 @@
 
 - (void)getStepNumber
 {
-
+    
     lable.text = [NSString stringWithFormat:@"我走了  %ld步",[StepManager sharedManager].step];
 }
 
